@@ -1,0 +1,13 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Community.SimpleForms.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<SimpleForms.Web.Models.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+}
+
+    <h1>Hello, World!</h1>
+    <section class="section section">
+    @{
+        await Html.RenderPartialAsync("SimpleFormsContact", new SimpleContactFormViewModel());
+    }
