@@ -1,0 +1,14 @@
+﻿
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+@if (string.IsNullOrEmpty(Model.Value<string>("mainText")) == false)
+{
+    <!-- Header-->
+    <header class="bg-primary bg-gradient text-white">
+        <div class="container px-4 text-center">
+            <h1 class="fw-bolder">@Model.GetProperty("mainText").GetValue()</h1>
+            <p class="lead">@Model.GetProperty("subText").GetValue()</p>
+        </div>
+    </header>
+}
