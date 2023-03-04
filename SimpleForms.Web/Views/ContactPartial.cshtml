@@ -1,5 +1,26 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Community.SimpleForms.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<SimpleForms.Web.Models.ContactPage>
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
+
+<section id="about">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-8">
+                <h1>@Model.PageTitle</h1>
+                @Html.Raw(Model.BodyText)
+            </div>
+            <div class="col-lg-8">
+                <h2>Contact form</h2>
+                @{
+                    await Html.RenderPartialAsync("Partials/CustomSimpleForm", new SimpleContactFormViewModel());
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
