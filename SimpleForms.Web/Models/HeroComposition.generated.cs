@@ -18,14 +18,29 @@ using Umbraco.Extensions;
 
 namespace SimpleForms.Web.Models
 {
-	/// <summary>Home</summary>
-	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IHeroComposition, IPageComposition, ISettings
+	// Mixin Content Type with alias "heroComposition"
+	/// <summary>Hero Composition</summary>
+	public partial interface IHeroComposition : IPublishedElement
+	{
+		/// <summary>Main Text</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string MainText { get; }
+
+		/// <summary>Sub-Text</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		string SubText { get; }
+	}
+
+	/// <summary>Hero Composition</summary>
+	[PublishedModel("heroComposition")]
+	public partial class HeroComposition : PublishedElementModel, IHeroComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
-		public new const string ModelTypeAlias = "home";
+		public new const string ModelTypeAlias = "heroComposition";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
@@ -34,14 +49,14 @@ namespace SimpleForms.Web.Models
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Home, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<HeroComposition, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Home(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public HeroComposition(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -55,7 +70,12 @@ namespace SimpleForms.Web.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mainText")]
-		public virtual string MainText => global::SimpleForms.Web.Models.HeroComposition.GetMainText(this, _publishedValueFallback);
+		public virtual string MainText => GetMainText(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Main Text</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetMainText(IHeroComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "mainText");
 
 		///<summary>
 		/// Sub-Text
@@ -63,38 +83,11 @@ namespace SimpleForms.Web.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("subText")]
-		public virtual string SubText => global::SimpleForms.Web.Models.HeroComposition.GetSubText(this, _publishedValueFallback);
+		public virtual string SubText => GetSubText(this, _publishedValueFallback);
 
-		///<summary>
-		/// Body Text
-		///</summary>
+		/// <summary>Static getter for Sub-Text</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("bodyText")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText => global::SimpleForms.Web.Models.PageComposition.GetBodyText(this, _publishedValueFallback);
-
-		///<summary>
-		/// Page Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("pageTitle")]
-		public virtual string PageTitle => global::SimpleForms.Web.Models.PageComposition.GetPageTitle(this, _publishedValueFallback);
-
-		///<summary>
-		/// Contact Form Target Email
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("contactFormTargetEmail")]
-		public virtual string ContactFormTargetEmail => global::SimpleForms.Web.Models.Settings.GetContactFormTargetEmail(this, _publishedValueFallback);
-
-		///<summary>
-		/// Copyright Message
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.4.0+daff988")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("copyrightMessage")]
-		public virtual string CopyrightMessage => global::SimpleForms.Web.Models.Settings.GetCopyrightMessage(this, _publishedValueFallback);
+		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		public static string GetSubText(IHeroComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "subText");
 	}
 }
