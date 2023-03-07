@@ -2,7 +2,11 @@
 
 A basic contact form project that can be added to any site without requiring any back end development at all. This repo is a temporary location for the project until the full project is ready to be released, at which point it will be made a public repo.
 
-**PLEASE NOTE : Simple Forms is not yet released fully open source as it needs to still be cleaned up, but it will be! The Timeline for this is during March 2023**
+**PLEASE NOTE : Simple Forms is not yet released fully!**
+
+*The source needs to still be cleaned up, and have my keys removed, but it will be and released soon! The Timeline for this is during March 2023**
+
+![Alt text](Assets/screenshot.png)
 
 ## Demo Site
 
