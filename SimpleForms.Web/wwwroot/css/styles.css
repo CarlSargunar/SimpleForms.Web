@@ -11299,3 +11299,20 @@ section {
   padding-top: 9rem;
   padding-bottom: 9rem;
 }
+
+footer a {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+footer p {
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+footer img.social-icon {
+    width: 1rem;
+    height: 1rem;
+}
