@@ -4,7 +4,7 @@ A basic contact form project that can be added to any site without requiring any
 
 **PLEASE NOTE : Simple Forms is not yet released fully!**
 
-*The source needs to still be cleaned up, and have my keys removed, but it will be and released soon! The Timeline for this is during March 2023**
+*The source needs to still be cleaned up, and have my keys removed, but it will be and released soon! The Timeline for this is during March 2023*
 
 ![Alt text](Assets/screenshot.png)
 
