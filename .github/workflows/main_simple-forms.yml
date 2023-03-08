@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'simple-forms'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6F5BB87444904AB38B8CC117F5681FD8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DF27E711792B4F9899AFC47F7D051041 }}
           package: .
