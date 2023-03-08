@@ -19,7 +19,6 @@
 
 	<ItemGroup>
 		<Folder Include="Models\" />
-		<Folder Include="wwwroot\media\" />
 		<Folder Include="uSync\" />
 	</ItemGroup>
 
