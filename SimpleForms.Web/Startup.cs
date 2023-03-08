@@ -47,7 +47,7 @@ namespace SimpleForms.Web
             {
                 app.UseDeveloperExceptionPage();
             }
-
+           
             app.UseUmbraco()
                 .WithMiddleware(u =>
                 {
