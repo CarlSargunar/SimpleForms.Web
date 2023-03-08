@@ -474,5 +474,5 @@ appsettings-schema.json
 # Log files
 /umbraco/Logs/
 
-# Media files
-/wwwroot/media/
+# We actually want to include Media files as we're using uSync content to deploy changes
+# /wwwroot/media/
