@@ -24,12 +24,12 @@
 
         @RenderBody()
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; @DateTime.Now.Year @Html.Raw(Model.Value("copyrightMessage", fallback: Fallback.ToAncestors))</p></div>
+        <footer class="py-5 bg-dark fixed-bottom">
+        <div class="container px-4"><p class="m-0 text-center text-white d-md-flex">Copyright &copy; @DateTime.Now.Year | <img src="/twitter.png" class="social-icon" alt="Twitter Icon" /> @Html.Raw(Model.Value("copyrightMessage", fallback: Fallback.ToAncestors)) | <img src="/github.png" class="social-icon" alt="GitHub Icon" /> <a href="https://github.com/carlsargunar" target="_blank">Github</a></p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="/js/scripts.js"></script>
+        @*<script src="/scripts/scripts.js"></script>*@
     </body>
 </html>
