@@ -4,7 +4,7 @@ A basic contact form project that can be added to any site without requiring any
 
 **PLEASE NOTE : Simple Forms is not yet released fully!**
 
-*The source needs to still be cleaned up, and have my keys removed, but it will be and released soon! The Timeline for this is during March 2023*
+_The source needs to still be cleaned up, and have my keys removed, but it will be and released soon! The Timeline for this is during March 2023_
 
 ![Alt text](Assets/screenshot.png)
 
@@ -12,14 +12,14 @@ A basic contact form project that can be added to any site without requiring any
 
 This demo site shows how to use the SimpleForms package and how to publish that website to a server. This repo will aim to :
 
-- Explain what the SimpleForms package is
-- Use the SimpleForms package to create a contact form on the website
-- Demonstrate hosting an Umbraco website on Azure
-- Demonstrate using Github Actions to build and deploy the website on Azure
+-   Explain what the SimpleForms package is
+-   Use the SimpleForms package to create a contact form on the website
+-   Demonstrate hosting an Umbraco website on Azure
+-   Demonstrate using Github Actions to build and deploy the website on Azure
 
 ## Getting Started
 
-To create this website I ran the following commands. *Note : as this is a live site, I've removed the password from the command line.*
+To create this website I ran the following commands. _Note : as this is a live site, I've removed the password from the command line._
 
     # Ensure we have the latest Umbraco templates
     dotnet new -i Umbraco.Templates::10.4.0
@@ -46,13 +46,12 @@ Add the following sippet into your page if you want to use standard contact form
     @using Umbraco.Community.SimpleForms.Models;
 
 
-    # Add this to the body of your page where you want to render the form    
+    # Add this to the body of your page where you want to render the form
     <section class="section section">
         @{
             await Html.RenderPartialAsync("SimpleFormsContact", new SimpleContactFormViewModel());
         }
     </section>
-
 
 ## Adding a custom contact form
 
@@ -70,37 +69,37 @@ Create a new partial view in the Views folder of your site. I called mine "Custo
 
     @using (Html.BeginUmbracoForm<SimpleFormsSurfaceController>(nameof(SimpleFormsSurfaceController.Submit)))
     {
-        <div>
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Name, new { @class = "form-label"})
             @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Name) })
             @Html.ValidationMessageFor(m => m.Name)
         </div>
-        <div>
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Email, new { @class = "form-label"})
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Email) })
             @Html.ValidationMessageFor(m => m.Email)
         </div>
-        <div>
+        <div class="mb-3">
+            @Html.LabelFor(m => m.Message, new { @class = "form-label"})
             @Html.TextAreaFor(m => m.Message, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Message) })
             @Html.ValidationMessageFor(m => m.Message)
         </div>
-        <input type="submit" name="Submit" value="Submit" />
+        <button class="btn btn-primary" type="submit">Submit</button>
     }
 
 ### Using the new Custom Form Partial
-
 
     # Add this using statement to the top of your page
     @using Umbraco.Community.SimpleForms.Models;
 
 
-    # Add this to the body of your page where you want to render the form    
+    # Add this to the body of your page where you want to render the form
     <section class="section section">
         @{
             await Html.RenderPartialAsync("SimpleFormsContact", new SimpleContactFormViewModel());
         }
     </section>
 
-
 ## Using a Tag Helper
 
 There is also a taghelper in development, which will allow you to render the form with a single line. This will be made available soon.
-
