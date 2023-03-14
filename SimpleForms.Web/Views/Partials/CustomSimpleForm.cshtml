@@ -19,5 +19,5 @@
         @Html.TextAreaFor(m => m.Message, new { @class = "form-control", placeholder = Html.DisplayNameFor(m => m.Message) })
         @Html.ValidationMessageFor(m => m.Message)
     </div>
-    <input type="submit" name="Submit" value="Submit" />
+    <button class="btn btn-primary" type="submit">Submit</button>
 }
