@@ -1,0 +1,21 @@
+{
+  "name": "simpleforms.web",
+  "version": "1.0.0",
+  "description": "A basic contact form project that can be added to any site without requiring any back end development at all. This repo is a temporary location for the project until the full project is ready to be released, at which point it will be made a public repo.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlSargunar/SimpleForms.Web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlSargunar/SimpleForms.Web/issues"
+  },
+  "homepage": "https://github.com/CarlSargunar/SimpleForms.Web#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.33.0"
+  }
+}
