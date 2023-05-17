@@ -6,6 +6,8 @@ test('Homepage Title', async ({ page }) => {
   // Test the H1 says Simple Forms
   const title = await page.$eval('h1', (el) => el.textContent);
   expect(title).toContain("Simple Forms");
+
+  await page.locator('header').screenshot({ path: 'screenshots/screenshot.png' });  
 });
 
 test('About Page', async ({ page }) => {
