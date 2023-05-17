@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('has title', async ({ page }) => {
+test('Homepage Title', async ({ page }) => {
   await page.goto('https://simple-forms.azurewebsites.net/');
 
   // Test the H1 says Simple Forms
