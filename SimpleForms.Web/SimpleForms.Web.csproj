@@ -7,8 +7,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="Umbraco.Cms" Version="10.4.0" />
-		<PackageReference Include="Umbraco.Community.SimpleForms" Version="1.0.4" />
-		<PackageReference Include="uSync" Version="10.3.2" />
+		<PackageReference Include="Umbraco.Community.SimpleForms" Version="1.0.8" />
+		<PackageReference Include="uSync" Version="10.3.3" />
 	</ItemGroup>
 
 	<ItemGroup>
