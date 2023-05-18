@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('About Page', async ({ page }) => {
+test('Contact Form', async ({ page }) => {
   await page.goto('https://simple-forms.azurewebsites.net/');
 
   // Click the get started link.
@@ -12,5 +12,5 @@ test('About Page', async ({ page }) => {
   // Test the H1 says Simple Forms
   const title = await page.$eval('h1', (el) => el.textContent);
   expect(title).toContain("Embedded");
-  
+
 });
